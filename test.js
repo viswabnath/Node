@@ -23,14 +23,25 @@ const fs = require('fs');
 // });
 
 //creating directory,writing file and unlinking
-fs.mkdir('test', function () {
-    fs.readFile('test.txt', 'utf8', function (err, data) {
-        fs.writeFile('./test/writetest.txt', data, (err) => {
-            fs.unlink('./test/writetest.txt', (err) => {
-                if (err) throw err;
-                console.log('file was deleted');
-                // fs.rmdir('test');
-            });
-        });
+// fs.mkdir('test', function () {
+//     fs.readFile('test.txt', 'utf8', function (err, data) {
+//         fs.writeFile('./test/writetest.txt', data, (err) => {
+//             fs.unlink('./test/writetest.txt', (err) => {
+//                 if (err) throw err;
+//                 console.log('file was deleted');
+//                 // fs.rmdir('test');
+//             });
+//         });
+//     });
+// });
+
+//reading a .html file and returning content on web
+var http = require('http');
+var server = http.createServer(function(req,res){
+    fs.readFile('index.html', function(err,data){
+        res.writeHead(200, {'content-type':'text/html'});
+        res.write(data);
+        res.end();
     });
 });
+server.listen(3000, 'localhost');
