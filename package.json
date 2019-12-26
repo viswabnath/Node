@@ -1,0 +1,21 @@
+{
+  "name": "node-learning",
+  "version": "1.0.0",
+  "description": "learning node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viswabnath/Node.git"
+  },
+  "author": "viswabnath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viswabnath/Node/issues"
+  },
+  "homepage": "https://github.com/viswabnath/Node#readme",
+  "dependencies": {}
+}

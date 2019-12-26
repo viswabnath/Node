@@ -1,5 +1,5 @@
-//reading file 
 const fs = require('fs');
+//reading file 
 // var readMe = fs.readFileSync('test.txt', 'utf8');
 // console.log(readMe)
 
@@ -36,12 +36,25 @@ const fs = require('fs');
 // });
 
 //reading a .html file and returning content on web
+// var http = require('http');
+// var server = http.createServer(function(req,res){
+//     fs.readFile('index.html', function(err,data){
+//         res.writeHead(200, {'content-type':'text/html'});
+//         res.write(data);
+//         res.end();
+//     });
+// });
+// server.listen(3000, 'localhost');
+
+//sending json object 
 var http = require('http');
-var server = http.createServer(function(req,res){
-    fs.readFile('index.html', function(err,data){
-        res.writeHead(200, {'content-type':'text/html'});
-        res.write(data);
-        res.end();
-    });
+var server = http.createServer(function (req, res) {
+    res.writeHead(200, { 'content-type': 'application/json' });
+    var myObj = {
+        name: 'paul',
+        occupation: 'developer',
+        city: 'singapore'
+    }
+    res.end(JSON.stringify(myObj));
 });
 server.listen(3000, 'localhost');
